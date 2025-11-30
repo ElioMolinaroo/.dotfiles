@@ -45,3 +45,6 @@
 theme = dark:kanagawa-paper-ink,light:kanagawa-paper-canvas
 font-family = "JetBrainsMono Nerd Font"
 font-size = 15
+
+# Remove confirmation message when closing
+confirm-close-surface = false

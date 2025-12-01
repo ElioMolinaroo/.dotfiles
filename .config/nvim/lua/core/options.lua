@@ -1,4 +1,5 @@
 vim.g.mapleader = " "
+vim.g.localmapleader = " "
 
 vim.opt.autoindent = true
 vim.opt.expandtab = true

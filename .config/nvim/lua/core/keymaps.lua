@@ -4,6 +4,7 @@ vim.keymap.set("v", "<F13>", "<Esc>", { noremap = true, silent = true })
 vim.keymap.set("c", "<F13>", "<Esc>", { noremap = true, silent = true })
 vim.keymap.set("t", "<F13>", "<C-\\><C-n>", { noremap = true, silent = true })
 vim.keymap.set("o", "<F13>", "<Esc>", { noremap = true, silent = true })
+vim.keymap.set({'n', 'v'}, 'Y', '"+y', { noremap = true, silent = true })
 
 -- Custom commands
 vim.keymap.set("t", "<esc><esc>", "<c-\\><c-n>")

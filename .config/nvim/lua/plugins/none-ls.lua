@@ -7,10 +7,5 @@ return {
 				null_ls.builtins.formatting.stylua,
 			},
 		})
-
-		vim.keymap.set("n", "<leader>f", function()
-			vim.lsp.buf.code_action({ context = { only = { "source.organizeImports" } }, apply = true })
-			vim.lsp.buf.format()
-		end)
 	end,
 }

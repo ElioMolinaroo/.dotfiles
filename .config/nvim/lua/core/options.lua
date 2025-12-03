@@ -13,3 +13,4 @@ vim.opt.relativenumber = true
 vim.diagnostic.config({ virtual_text = true })
 
 vim.opt.termguicolors = true
+vim.opt.swapfile = false

@@ -1,9 +1,10 @@
 -- Lua
 vim.lsp.enable("lua_ls")
+vim.lsp.enable("stylua")
 
 -- Python
+vim.lsp.enable("ty")
 vim.lsp.enable("ruff")
-vim.lsp.enable("basedpyright")
 
 -- Markdown
 vim.lsp.enable("marksman")

@@ -1,9 +1,6 @@
 -- Vim motions
-vim.keymap.set("i", "<F13>", "<Esc>", { noremap = true, silent = true })
-vim.keymap.set("v", "<F13>", "<Esc>", { noremap = true, silent = true })
-vim.keymap.set("c", "<F13>", "<Esc>", { noremap = true, silent = true })
-vim.keymap.set("t", "<F13>", "<C-\\><C-n>", { noremap = true, silent = true })
-vim.keymap.set("o", "<F13>", "<Esc>", { noremap = true, silent = true })
+vim.keymap.set("n", "<leader>w", "<cmd>w<CR>")
+vim.keymap.set("n", "<leader>q", "<cmd>q<CR>")
 vim.keymap.set({ "n", "v" }, "Y", '"+y', { noremap = true, silent = true })
 
 -- Custom commands
@@ -26,8 +23,10 @@ vim.api.nvim_create_autocmd("BufWritePre", {
 	callback = function(event)
 		local clients = vim.lsp.get_active_clients({ bufnr = event.buf })
 		if next(clients) ~= nil then
+			vim.lsp.buf.code_action({ context = { only = { "source.organizeImports" } }, apply = true })
 			vim.lsp.buf.format({ bufnr = event.buf })
 		end
+		vim.wait(100)
 	end,
 })
 

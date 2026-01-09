@@ -17,11 +17,11 @@ vim.keymap.set("n", "<leader>r", vim.lsp.buf.rename)
 -- Formatting
 vim.keymap.set("n", "<leader>f", function()
 	vim.lsp.buf.format()
-    vim.lsp.buf.code_action({ context = { only = { "source.organizeImports" } }, apply = true })
+	vim.lsp.buf.code_action({ context = { only = { "source.organizeImports" } }, apply = true })
 end)
 vim.api.nvim_create_autocmd("BufWritePre", {
 	callback = function(event)
-		local clients = vim.lsp.get_active_clients({ bufnr = event.buf })
+		local clients = vim.lsp.get_clients({ bufnr = event.buf })
 		if next(clients) ~= nil then
 			vim.lsp.buf.format({ bufnr = event.buf })
 			vim.lsp.buf.code_action({ context = { only = { "source.organizeImports" } }, apply = true })

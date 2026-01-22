@@ -10,6 +10,8 @@ return {
 			"stylua",
 			-- Markdown
 			"marksman",
+			-- C,
+			"clangd",
 		},
 		automatic_enable = true,
 	},

@@ -14,3 +14,16 @@ vim.diagnostic.config({ virtual_text = true })
 
 vim.opt.termguicolors = true
 vim.opt.swapfile = false
+
+-- Langmap for Russian (US, phonetic) keyboard layout
+vim.opt.langmap =
+	"АБЦДЕФГХИЙКЛМНОПЯРСТУЖВЬЫЗ;ABCDEFGHIJKLMNOPQRSTUVWXYZ,абцдефгхийклмнопярстужвьыз;abcdefghijklmnopqrstuvwxyz"
+
+-- Only activate spelling in russian for markdown and text files
+vim.api.nvim_create_autocmd("FileType", {
+	pattern = { "markdown", "md", "txt" },
+	callback = function()
+		vim.opt_local.spell = true
+		vim.opt_local.spelllang = "ru"
+	end,
+})

@@ -2,6 +2,10 @@
 vim.keymap.set("n", "<leader>w", "<cmd>w<CR>")
 vim.keymap.set("n", "<leader>q", "<cmd>q<CR>")
 vim.keymap.set({ "n", "v" }, "Y", '"+y', { noremap = true, silent = true })
+-- Same keymaps but for Russian (US, phonetic) layout
+vim.keymap.set("n", "<leader>в", "<cmd>w<CR>")
+vim.keymap.set("n", "<leader>я", "<cmd>q<CR>")
+vim.keymap.set({ "n", "v" }, "Ы", '"+y', { noremap = true, silent = true })
 
 -- Custom commands
 vim.keymap.set("t", "<esc><esc>", "<c-\\><c-n>")

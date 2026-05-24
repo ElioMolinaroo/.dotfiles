@@ -8,10 +8,9 @@ return {
 			-- Lua
 			"lua_ls",
 			"stylua",
-			-- Markdown
-			"marksman",
 			-- C,
 			"clangd",
+			"neocmake",
 		},
 		automatic_enable = true,
 	},

@@ -1,0 +1,3 @@
+[mgr]
+prepend_keymap = [{on = ["g", "c"], run = "cd ~/.dotfiles", desc = "Go ~/.dotfiles"}]
+append_keymap = [{on = ["g", "w"], run = "cd ~/workspace", desc = "Go ~/workspace"}]

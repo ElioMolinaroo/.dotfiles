@@ -116,6 +116,9 @@ if ! shopt -oq posix; then
   fi
 fi
 
+. "$HOME/.local/bin/env"
+. "$HOME/.cargo/env"
+
 #
 # ------------------------- CUSTOM CONFIG ------------------------------------------
 
@@ -133,4 +136,17 @@ alias lla="eza --color=always --color-scale=all --color-scale-mode=gradient --ic
 # bat alias
 alias cat="batcat"
 
-. "$HOME/.local/bin/env"
+# zola (static site generator) alias
+alias zola="flatpak run org.getzola.zola"
+
+# Forticlient VPN alias
+alias stim-vpn="sudo openfortivpn -c ~/.config/openfortivpn/stim.conf"
+
+# Yazi start command to be able to change directories when exiting
+function y() {
+	local tmp="$(mktemp -t "yazi-cwd.XXXXXX")" cwd
+	command yazi "$@" --cwd-file="$tmp"
+	IFS= read -r -d '' cwd < "$tmp"
+	[ "$cwd" != "$PWD" ] && [ -d "$cwd" ] && builtin cd -- "$cwd"
+	rm -f -- "$tmp"
+}

@@ -20,10 +20,10 @@ vim.opt.langmap =
 	"АБЦДЕФГХИЙКЛМНОПЯРСТУЖВЬЫЗ;ABCDEFGHIJKLMNOPQRSTUVWXYZ,абцдефгхийклмнопярстужвьыз;abcdefghijklmnopqrstuvwxyz"
 
 -- Only activate spelling in russian for markdown and text files
-vim.api.nvim_create_autocmd("FileType", {
-	pattern = { "markdown", "md", "txt" },
-	callback = function()
-		vim.opt_local.spell = true
-		vim.opt_local.spelllang = "ru"
-	end,
-})
+-- vim.api.nvim_create_autocmd("FileType", {
+-- 	pattern = { "markdown", "md", "txt" },
+-- 	callback = function()
+-- 		vim.opt_local.spell = true
+-- 		vim.opt_local.spelllang = "ru"
+-- 	end,
+-- })

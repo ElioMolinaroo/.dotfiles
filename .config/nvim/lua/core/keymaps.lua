@@ -15,6 +15,9 @@ vim.keymap.set({ "n", "t" }, "<space>tt", "<cmd>Floaterminal<CR>")
 vim.keymap.set("n", "K", vim.lsp.buf.hover, {})
 vim.keymap.set({ "n", "v" }, "<leader>ca", vim.lsp.buf.code_action, {})
 vim.keymap.set("n", "<leader>r", vim.lsp.buf.rename)
+vim.keymap.set("n", "<leader>td", function()
+	vim.diagnostic.enable(not vim.diagnostic.is_enabled())
+end, {})
 
 -- Formatting
 vim.keymap.set("n", "<leader>f", function()
